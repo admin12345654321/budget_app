@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+:root {
+  --green: #337357;
+  --blue: rgb(236, 255, 254);
+  --red: rgb(252, 44, 44);
+}
+
+.showGreen {
+  color: var(--green);
+}
+
+.showRed {
+  color: var(--red);
+}
+
+.showBlack {
+  color: #111;
+}
+
+.moneyColor {
+  color: var(--green);
+}
+
+/*         APP INFO           */
+.h-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.icon {
+  font-size: 2rem;
+  color: var(--green);
+}
+
+#budget,
+#expenses,
+#balance {
+  font-size: 1.3rem;
+}
+
+/*         APP BODY           */
+
+.budget-app-body {
+  border: 1px solid #111;
+  border-radius: 2px;
+  background: var(--blue);
+}
+
+.left-side {
+  border-right: 2px solid var(--green);
+}
+
+.form-btn {
+  padding: 5px 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.feedback {
+  display: none;
+}
+
+.expense-list {
+  width: 70%;
+}
+
+.expense-item {
+  width: 100%;
+  background: #eaeaea;
+  padding: 5px 10px;
+  border-radius: 2px;
+}
+
+.expense-icons a {
+  text-decoration: none;
+}
