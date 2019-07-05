@@ -23,18 +23,18 @@
     <div class="row mt-3">
       <div class="col-4 text-center">
         <h6 class="h-title">budget</h6>
-        <span class="icon budget-icon"><i class="fas fa-money-bill-alt"></i></span>
-        <h4 id="budget"><span>$</span><span id="budget-amount">0</span></h4>
+        <span class="icon budget-icon"><i class="fas fa-landmark"></i></span>
+        <h4 id="budget" class="showGreen"><span><i class="fas fa-euro-sign"></i></span> <span id="budget-amount">0</span></h4>
       </div>
       <div class="col-4 text-center">
         <h6 class="h-title">expenses</h6>
-        <span class="icon expenses-icon"><i class="far fa-credit-card"></i></span>
-        <h4 id="expenses"><span>$</span><span id="expenses-amount">0</span></h4>
+        <span class="icon expenses-icon"><i class="fas fa-coins"></i></span>
+        <h4 id="expenses" class="showRed"><span><i class="fas fa-euro-sign"></i></span> <span id="expenses-amount">0</span></h4>
       </div>
       <div class="col-4 text-center">
         <h6 class="h-title">balance</h6>
         <span class="icon balance-icon"><i class="fas fa-balance-scale"></i></i></span>
-        <h4 id="balance"><span>$</span><span id="balance-amount">0</span></h4>
+        <h4 id="balance"><span><i class="fas fa-euro-sign"></i></span> <span id="balance-amount">0</span></h4>
       </div>
     </div>
     <!-- end of app info -->
@@ -46,14 +46,14 @@
             <div class="input-group">
               <div class="input-group-prepend">
                 <span class="input-group-text">
-                  <i class="fas fa-dollar-sign"></i>
+                  <i class="fas fa-euro-sign"></i>
                 </span>
               </div>
               <input type="number" id="budget-input" class="form-control">
             </div>
             <button type="submit" class="btn btn-outline-info form-btn mt-3 text-uppercase">add budget</button>
           </form>
-          <div class="feedback alert alert-danger mt-4">alert</div>
+          <div class="feedback alert alert-danger mt-4 text-capitalize">alert</div>
       </div>
       <div class="col-10 mx-auto col-md-5">
         <form id="expense-form">
@@ -70,7 +70,7 @@
           <div class="input-group mb-2">
             <div class="input-group-prepend">
               <span class="input-group-text">
-                <i class="fas fa-dollar-sign"></i>
+                <i class="fas fa-euro-sign"></i>
               </span>
             </div>
             <input type="number" class="form-control" id="expense-amount">
@@ -88,9 +88,9 @@
           <h5 class="mr-5">expense value</h5>
           <h5></h5>
         </div>
-        <div class="expense-item d-flex justify-content-between align-items-baseline text-capitalize">
-          <h5 class="expense-title" style='margin-bottom: 0'>- title</h5>
-          <h5 class="expense-amount ml-5" style='margin-bottom: 0'>amount</h5>
+        <!-- <div class="expense-item d-flex justify-content-between align-items-baseline text-capitalize mb-3">
+          <h6 class="expense-title" style='margin-bottom: 0'>- title</h6>
+          <h6 class="expense-amount ml-5" style='margin-bottom: 0'><i class="fas fa-euro-sign"></i> amount</h6>
           <div class="expense-icons">
             <a href="!#" class="edit-icon mr-2 text-success" data-id='${expense.id}'>
               <i class="fas fa-pen"></i>
@@ -99,10 +99,12 @@
               <i class="fas fa-trash"></i>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- end of app items container -->
   </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

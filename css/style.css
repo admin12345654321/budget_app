@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Roboto', sans-serif !important;
+  
 }
 
 :root {
@@ -34,6 +35,7 @@ body {
 .h-title {
   font-size: 1rem;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 .icon {
@@ -45,12 +47,13 @@ body {
 #expenses,
 #balance {
   font-size: 1.3rem;
+  font-weight: bold;
 }
 
 /*         APP BODY           */
 
 .budget-app-body {
-  border: 1px solid #111;
+  border: 1px solid rgb(168, 168, 168);
   border-radius: 2px;
   background: var(--blue);
 }
@@ -71,11 +74,12 @@ body {
 
 .expense-list {
   width: 70%;
+  margin: 0 auto;
 }
 
 .expense-item {
   width: 100%;
-  background: #eaeaea;
+  background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
   padding: 5px 10px;
   border-radius: 2px;
 }
