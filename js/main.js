@@ -62,6 +62,20 @@ class UI {
     this.showBalance();
   }
 
+  editItem(element) {
+    console.log(element);
+  }
+
+  deleteItem(element) {
+    const id = parseInt(element.dataset.id);
+    const parent = element.parentElement.parentElement;
+    this.expenseList.removeChild(parent);
+    const updatedList = this.itemList.filter(item => item.id !== id);
+    this.itemList = updatedList;
+    console.log(this.itemList);
+    this.showBalance();
+  }
+
   showBalance() {
     const expense = this.totalExpenses();
     this.balanceAmount.textContent = parseInt(this.budgetAmount.textContent) - expense;
@@ -96,10 +110,10 @@ class UI {
       <h6 class="expense-title" style='margin-bottom: 0'>- ${expense.title}</h6>
       <h6 class="expense-amount" style='margin-bottom: 0'><i class="fas fa-euro-sign"></i>${expense.amount}</h6>
       <div class="expense-icons">
-        <a href="!#" class="edit-icon mr-2 text-success" data-id='${expense.id}'>
+        <a href="#" class="edit-icon mr-2 text-success" data-id='${expense.id}'>
           <i class="fas fa-pen"></i>
         </a>
-        <a href="!#" class="delete-icon text-danger" data-id='${expense.id}'>
+        <a href="#" class="delete-icon text-danger" data-id='${expense.id}'>
           <i class="fas fa-trash"></i>
         </a>
       </div>
@@ -126,7 +140,11 @@ const eventListeners = () => {
   });
 
   expenseList.addEventListener('click', (e) => {
-
+    if (e.target.parentElement.classList.contains('edit-icon')) {
+      ui.editItem(e.target.parentElement);
+    } else if (e.target.parentElement.classList.contains('delete-icon')) {
+      ui.deleteItem(e.target.parentElement);
+    }
   });
 }
 
