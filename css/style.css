@@ -46,7 +46,7 @@ body {
 #budget,
 #expenses,
 #balance {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -63,8 +63,8 @@ body {
 }
 
 .form-btn {
-  padding: 5px 25px;
-  font-size: 1.1rem;
+  padding: 6px 15px;
+  font-size: 1rem;
   font-weight: bold;
 }
 

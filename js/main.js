@@ -63,7 +63,18 @@ class UI {
   }
 
   editItem(element) {
-    console.log(element);
+    const id = parseInt(element.dataset.id);
+    const parent = element.parentElement.parentElement;
+    // remove from dom
+    this.expenseList.removeChild(parent);
+    // find element need to edit
+    const itemToBeEdited = this.itemList.find(item => item.id === id);
+    // show value in input
+    this.expenseTitle.value = itemToBeEdited.title;
+    this.expenseAmount.value = itemToBeEdited.amount;
+    const updatedList = this.itemList.filter(item => item.id !== id);
+    this.itemList = updatedList;
+    this.showBalance();
   }
 
   deleteItem(element) {
@@ -72,7 +83,6 @@ class UI {
     this.expenseList.removeChild(parent);
     const updatedList = this.itemList.filter(item => item.id !== id);
     this.itemList = updatedList;
-    console.log(this.itemList);
     this.showBalance();
   }
 
