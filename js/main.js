@@ -115,6 +115,7 @@ class UI {
 
   addExpense(expense) {
     let div = document.createElement('div');
+    div.id = expense.id;
     div.classList.add('expense-item', 'd-flex', 'justify-content-between', 'align-items-baseline', 'text-capitalize', 'mb-3');
     div.innerHTML = `
       <h6 class="expense-title" style='margin-bottom: 0'>- ${expense.title}</h6>
@@ -129,6 +130,9 @@ class UI {
       </div>
     `;
     this.expenseList.appendChild(div);
+  }
+  pagination() {
+    console.log(this.expenseList);
   }
 }
 
@@ -147,6 +151,7 @@ const eventListeners = () => {
   expenseForm.addEventListener('submit', (e) => {
     e.preventDefault();
     ui.submitExpenseForm();
+    ui.pagination();
   });
 
   expenseList.addEventListener('click', (e) => {

@@ -32,6 +32,28 @@ body {
 }
 
 /*         APP INFO           */
+.header {
+  position: relative;
+}
+
+.return-home {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  background: var(--green);
+  padding: 5px 20px;
+  color: #fff;
+  text-decoration: none !important;
+  border-radius: 2px;
+  transition: all 0.5s;
+  border: 2px solid var(--green);
+}
+
+.return-home:hover {
+  color: var(--green) !important;
+  background: #fff;
+}
+
 .h-title {
   font-size: 1rem;
   text-transform: uppercase;
@@ -82,6 +104,11 @@ body {
   background-image: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
   padding: 5px 10px;
   border-radius: 2px;
+  transition: all 0.5s;
+}
+
+.expense-item:hover {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 .expense-icons a {
