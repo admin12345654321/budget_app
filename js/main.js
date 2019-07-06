@@ -48,18 +48,20 @@ class UI {
       setTimeout(() => {
         this.feedBack.style.display = 'none';
       }, 4000);
+    } else {
+      let expense = {
+        id: this.itemID,
+        title,
+        amount
+      }
+      this.itemID++;
+      this.itemList = [...this.itemList, expense];
+      this.expenseTitle.value = '';
+      this.expenseAmount.value = '';
+      this.addExpense(expense);
+      this.showBalance();
     }
-    let expense = {
-      id: this.itemID,
-      title,
-      amount
-    }
-    this.itemID++;
-    this.itemList = [...this.itemList, expense];
-    this.expenseTitle.value = '';
-    this.expenseAmount.value = '';
-    this.addExpense(expense);
-    this.showBalance();
+    
   }
 
   editItem(element) {
