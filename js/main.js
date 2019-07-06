@@ -42,7 +42,11 @@ class UI {
   submitExpenseForm() {
     const title = this.expenseTitle.value;
     const amount = this.expenseAmount.value;
-    if (this.expenseTitle.value === '' || this.expenseAmount.value === '' || parseInt(this.expenseAmount.value) < 0) {
+    if (
+      this.expenseTitle.value === '' ||
+      this.expenseAmount.value === '' ||
+      parseInt(this.expenseAmount.value) < 0
+    ) {
       this.feedBack.innerHTML = 'field value cannot be empty or negative';
       this.feedBack.style.display = 'block';
       setTimeout(() => {
@@ -53,7 +57,7 @@ class UI {
         id: this.itemID,
         title,
         amount
-      }
+      };
       this.itemID++;
       this.itemList = [...this.itemList, expense];
       this.expenseTitle.value = '';
@@ -61,7 +65,6 @@ class UI {
       this.addExpense(expense);
       this.showBalance();
     }
-    
   }
 
   editItem(element) {
@@ -90,7 +93,8 @@ class UI {
 
   showBalance() {
     const expense = this.totalExpenses();
-    this.balanceAmount.textContent = parseInt(this.budgetAmount.textContent) - expense;
+    this.balanceAmount.textContent =
+      parseInt(this.budgetAmount.textContent) - expense;
     if (parseInt(this.balanceAmount.textContent) === 0) {
       this.balance.classList.remove('showGreen', 'showRed');
       this.balance.classList.add('showBlack');
@@ -118,10 +122,19 @@ class UI {
   addExpense(expense) {
     let div = document.createElement('div');
     div.id = expense.id;
-    div.classList.add('expense-item', 'd-flex', 'justify-content-between', 'align-items-baseline', 'text-capitalize', 'mb-3');
+    div.classList.add(
+      'expense-item',
+      'd-flex',
+      'justify-content-between',
+      'align-items-baseline',
+      'text-capitalize',
+      'mb-3'
+    );
     div.innerHTML = `
       <h6 class="expense-title" style='margin-bottom: 0'>- ${expense.title}</h6>
-      <h6 class="expense-amount" style='margin-bottom: 0'><i class="fas fa-euro-sign"></i>${expense.amount}</h6>
+      <h6 class="expense-amount" style='margin-bottom: 0'><i class="fas fa-euro-sign"></i>${
+        expense.amount
+      }</h6>
       <div class="expense-icons">
         <a href="#" class="edit-icon mr-2 text-success" data-id='${expense.id}'>
           <i class="fas fa-pen"></i>
@@ -145,25 +158,25 @@ const eventListeners = () => {
 
   const ui = new UI();
 
-  budgetForm.addEventListener('submit', (e) => {
+  budgetForm.addEventListener('submit', e => {
     e.preventDefault();
     ui.submitBudgetForm();
   });
 
-  expenseForm.addEventListener('submit', (e) => {
+  expenseForm.addEventListener('submit', e => {
     e.preventDefault();
     ui.submitExpenseForm();
     ui.pagination();
   });
 
-  expenseList.addEventListener('click', (e) => {
+  expenseList.addEventListener('click', e => {
     if (e.target.parentElement.classList.contains('edit-icon')) {
       ui.editItem(e.target.parentElement);
     } else if (e.target.parentElement.classList.contains('delete-icon')) {
       ui.deleteItem(e.target.parentElement);
     }
   });
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
   eventListeners();
