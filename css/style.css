@@ -121,6 +121,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('../images/mainBcg.jpg') center/cover no-repeat;
   color: var(--light);
+  position: relative;
 }
 
 .main-page a {
@@ -138,4 +139,10 @@ body {
 
 .main-page a:hover {
   background: transparent;
+}
+
+.main-page .owner {
+  position: absolute;
+  bottom: 0;
+  right: 1%;
 }
